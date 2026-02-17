@@ -14,7 +14,7 @@ my_pubkey_hash = hash160(compressed_pubkey)
 my_address = segwit_encode("tb", 0, my_pubkey_hash)
 print(my_address)
 
-prev_tx_hex = ""
+prev_tx_hex = "02000000000101aca9611cb79e2f8504ea1e031e2ea52fe9982421a203655d4f22ca00e89f27810000000000ffffffff0240420f0000000000160014f092c4a841e9b99026a26ac9c80ff6b6d9b8603b18053d00000000001600145558f3a510b4e645a812a441616c379982aef52d02483045022100f0a9850a5c80d61a48689f9922bb41ebbf0cb62c54ef58bc82f834c6f5ad539102201dc751e8498548a23f210952e47ccbc95456d307555dca398a4cad3ed4e00a4f01210255949b16f0d6da522e715d208866fb7f35f5fde8dc5ce184bef3dff7b35c5baa00000000"
 stream = BytesIO(bytes.fromhex(prev_tx_hex))
 prev_tx = Tx.parse(stream)
 prev_tx_id = bytes.fromhex(prev_tx.id())
@@ -24,12 +24,12 @@ tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None,
                    sequence=0xffffffff, witness=None))
 
 target_address = "tb1q24v08fgsknnyt2qj53qkzmphnxp2aafdq6xd7w"
-target_amount = ""
+target_amount = 500000
 target_pubkey_hash = segwit_decode(target_address)[2]
 target_script_pubkey = p2wpkh_script(target_pubkey_hash)
 
 change_address = my_address
-change_amount = ""
+change_amount = 499000
 change_script_pubkey = p2wpkh_script(my_pubkey_hash)
 
 tx_outs = []
@@ -43,6 +43,6 @@ sig = private_key.sign(z).der() + SIGHASH_ALL.to_bytes(1, 'big')
 tx_obj.tx_ins[0].witness = [sig, compressed_pubkey]
 
 print(tx_obj.verify_input(0))
-print(f'tx fee : {tx_obj.tx_outs[0]-tx_obj.tx_outs[1]}')
+print(f'tx fee : {tx_obj.fee(testnet=True)}')
 
 print(tx_obj.serialize().hex())
