@@ -41,3 +41,6 @@ tx_obj = Tx(version=2, tx_ins=tx_ins, tx_outs=tx_outs,
 z = tx_obj.sig_hash_bip143(0, redeem_script=None, witness_script=None)
 sig = private_key.sign(z).der() + SIGHASH_ALL.to_bytes(1, 'big')
 tx_obj.tx_ins[0].witness = [sig, compressed_pubkey]
+
+print(tx_obj.verify_input(0))
+print(f'tx fee : {tx_obj.tx_outs[0]-tx_obj.tx_outs[1]}')
