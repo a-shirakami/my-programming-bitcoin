@@ -32,3 +32,6 @@ change_address = my_address
 change_amount = ""
 change_script_pubkey = p2wpkh_script(my_pubkey_hash)
 
+tx_outs = []
+tx_outs.append(TxOut(amount=target_amount, script_pubkey=target_script_pubkey))
+tx_outs.append(TxOut(amount=change_amount, script_pubkey=change_script_pubkey))
