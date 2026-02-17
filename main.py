@@ -13,3 +13,13 @@ compressed_pubkey = public_key.sec(compressed=True)
 my_pubkey_hash = hash160(compressed_pubkey)
 my_address = segwit_encode("tb", 0, my_pubkey_hash)
 print(my_address)
+
+prev_tx_hex = ""
+stream = BytesIO(bytes.fromhex(prev_tx_hex))
+prev_tx = Tx.parse(stream)
+prev_tx_id = bytes.fromhex(prev_tx.id())
+prev_index = 0
+tx_ins = []
+tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, 
+                   sequence=0xffffffff, witness=None))
+
