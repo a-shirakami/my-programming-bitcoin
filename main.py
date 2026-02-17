@@ -23,3 +23,7 @@ tx_ins = []
 tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, 
                    sequence=0xffffffff, witness=None))
 
+target_address = "tb1q24v08fgsknnyt2qj53qkzmphnxp2aafdq6xd7w"
+target_amount = ""
+target_pubkey_hash = segwit_decode(target_address)[2]
+target_script_pubkey = p2wpkh_script(target_pubkey_hash)
