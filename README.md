@@ -11,9 +11,9 @@ source venv/bin/activate  # Windowsなら venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 詳細
+## ドキュメント
 * [各モジュールの説明](./docs/modules.md)  
-  srcフォルダ内の各モジュールの簡単な説明を記載しています。
+  srcフォルダ内の各クラス設計や役割について記載しています。
 
 * [送信したトランザクション](./docs/transaction.md)  
-  実際に送信したトランザクションを解説しています。  
+  テストネットで実際に承認されたトランザクションの構造を解説しています。  
