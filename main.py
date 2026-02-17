@@ -27,3 +27,8 @@ target_address = "tb1q24v08fgsknnyt2qj53qkzmphnxp2aafdq6xd7w"
 target_amount = ""
 target_pubkey_hash = segwit_decode(target_address)[2]
 target_script_pubkey = p2wpkh_script(target_pubkey_hash)
+
+change_address = my_address
+change_amount = ""
+change_script_pubkey = p2wpkh_script(my_pubkey_hash)
+
