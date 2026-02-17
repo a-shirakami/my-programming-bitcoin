@@ -1,9 +1,16 @@
-# my-programming-bitcoin
+# my-programming-bitcoin  
+
+## 参考書籍  
+本プロジェクトは、以下の書籍及びリポジトリを学習のガイドとして作成しています。  
+- **書籍**: [Programming Bitcoin (O'Reilly Media)](https://www.oreilly.co.jp/books/9784873119021/)
+- **公式リポジトリ**: [jimmysong/programmingbitcoin](https://github.com/jimmysong/programmingbitcoin)  
+
 ## 概要
 本プロジェクトは、ビットコインのプロトコル内部を深く理解するための学習用リポジトリです。 **汎用的なツールではありません** が、生のバイト列からトランザクションを構築するプロセスを詳細に記録しています。  
 ※決して、メインネットでブロードキャストするためのトランザクション作成には使用しないでください。  
 
 ## ディレクトリ構造  
+```text
 my-programming-bitcoin/  
 ├── docs/  
 │   ├── modules.md  
@@ -22,9 +29,10 @@ my-programming-bitcoin/
 ├── main.py  
 ├── README.md  
 ├── requirements.txt  
+```
 
 ## 実行方法  
-```
+```bash
 git clone https://github.com/a-shirakami/my-programming-bitcoin
 cd my-programming-bitcoin
 python -m venv venv
