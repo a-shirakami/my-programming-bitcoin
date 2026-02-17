@@ -35,3 +35,9 @@ change_script_pubkey = p2wpkh_script(my_pubkey_hash)
 tx_outs = []
 tx_outs.append(TxOut(amount=target_amount, script_pubkey=target_script_pubkey))
 tx_outs.append(TxOut(amount=change_amount, script_pubkey=change_script_pubkey))
+
+tx_obj = Tx(version=2, tx_ins=tx_ins, tx_outs=tx_outs, 
+            locktime=0, testnet=True, segwit=True)
+z = tx_obj.sig_hash_bip143(0, redeem_script=None, witness_script=None)
+sig = private_key.sign(z).der() + SIGHASH_ALL.to_bytes(1, 'big')
+tx_obj.tx_ins[0].witness = [sig, compressed_pubkey]
