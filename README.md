@@ -6,9 +6,11 @@
 ## 実行方法  
 ```
 git clone https://github.com/a-shirakami/my-programming-bitcoin
+cd my-programming-bitcoin
 python -m venv venv
 source venv/bin/activate  # Windowsなら venv\Scripts\activate
 pip install -r requirements.txt
+python main.py
 ```
 
 ## ドキュメント
