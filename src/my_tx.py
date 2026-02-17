@@ -4,19 +4,19 @@ from unittest import TestCase
 import json
 import requests
 
-from my_ecc import PrivateKey
+from src.my_ecc import PrivateKey
 
-from my_helper import (
+from src.my_helper import (
     encode_varint,
     hash256,
     int_to_little_endian,
     little_endian_to_int,
     read_varint,
 )
-from my_script import (Script, 
+from src.my_script import (Script, 
                        p2pkh_script)
  
-from my_helper import SIGHASH_ALL
+from src.my_helper import SIGHASH_ALL
  
 class Tx:
     command = b'tx'

@@ -4,7 +4,7 @@ from random import randint
 import hashlib
 import hmac
 
-from my_helper import (encode_base58_checksum,
+from src.my_helper import (encode_base58_checksum,
                        hash160,)
 
 

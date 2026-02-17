@@ -1,4 +1,4 @@
-from my_op import (OP_CODE_FUNCTIONS,
+from src.my_op import (OP_CODE_FUNCTIONS,
                    OP_CODE_NAMES,
                    op_hash160,
                    op_equal,
@@ -6,7 +6,7 @@ from my_op import (OP_CODE_FUNCTIONS,
                    )
 from io import BytesIO
 
-from my_helper import hash160, sha256
+from src.my_helper import hash160, sha256
 
 import hashlib
 import hmac
@@ -17,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 LOGGER.setLevel(logging.INFO)
 LOGGER.addHandler(logging.StreamHandler())
 
-from my_helper import (little_endian_to_int,
+from src.my_helper import (little_endian_to_int,
                        read_varint,
                        int_to_little_endian,
                        encode_varint)

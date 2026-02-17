@@ -2,13 +2,13 @@ import hashlib
 
 from unittest import TestCase
 
-from my_ecc import (
+from src.my_ecc import (
     S256Point,
     Signature,
     PrivateKey
 )
 
-from my_helper import (
+from src.my_helper import (
     hash160,
     hash256,
 )

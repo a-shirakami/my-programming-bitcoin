@@ -1,6 +1,6 @@
 from io import BytesIO
 
-from my_helper import (little_endian_to_int,
+from src.my_helper import (little_endian_to_int,
                        int_to_little_endian,
                        hash256,
                        bits_to_target,

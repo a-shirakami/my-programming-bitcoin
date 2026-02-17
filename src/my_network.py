@@ -1,14 +1,14 @@
 NETWORK_MAGIC = b'\xf9\xbe\xb4\xd9'
 TESTNET_NETWORK_MAGIC = b'\x1c\x16\x3f\x28'
 
-from my_helper import (little_endian_to_int,
+from src.my_helper import (little_endian_to_int,
                        int_to_little_endian,
                        hash256,
                        encode_varint,
                        read_varint
                        )
 
-from my_block import Block
+from src.my_block import Block
 
 from random import randint
 import time, socket
