@@ -4,8 +4,9 @@ from src.my_ecc import PrivateKey
 from src.my_script import Script, p2wpkh_script
 from src.my_tx import Tx, TxIn, TxOut
 from src.bech32 import segwit_encode, segwit_decode
+from secret import SECRET
 
-secret = 11292004
+secret = SECRET
 private_key = PrivateKey(secret)
 public_key = private_key.point
 compressed_pubkey = public_key.sec(compressed=True)
