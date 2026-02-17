@@ -44,3 +44,5 @@ tx_obj.tx_ins[0].witness = [sig, compressed_pubkey]
 
 print(tx_obj.verify_input(0))
 print(f'tx fee : {tx_obj.tx_outs[0]-tx_obj.tx_outs[1]}')
+
+print(tx_obj.serialize().hex())
