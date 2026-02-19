@@ -20,6 +20,9 @@ my_pubkey_hash = hash160(compressed_pubkey)
 my_address = segwit_encode("tb", 0, my_pubkey_hash)
 print(my_address)
 ```
+* 秘密鍵（数値）から公開鍵を作成  
+* 圧縮SECフォーマットでシリアライズ  
+* hash160をかけて、算出された値（公開鍵ハッシュ）をBech32エンコード
 
 ### 2. インプットを指定する  
 ```python
