@@ -31,6 +31,7 @@ my-programming-bitcoin/
 ├── main.py  
 ├── README.md  
 ├── requirements.txt  
+├── send_to_pubadd.py     
 ```
 
 ## 実行方法  
