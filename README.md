@@ -19,8 +19,10 @@ my-programming-bitcoin/
 │   ├── __init__.py  
 │   ├── bech32.py  
 │   ├── my_block.py  
+│   ├── my_bloomfilter.py  
 │   ├── my_ecc.py  
 │   ├── my_helper.py  
+│   ├── my_merkleblock.py  
 │   ├── my_network.py  
 │   ├── my_op.py  
 │   ├── my_script.py  
