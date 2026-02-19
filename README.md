@@ -15,6 +15,9 @@ my-programming-bitcoin/
 ├── docs/  
 │   ├── modules.md  
 │   ├── transaction.md  
+├── images/  
+│   ├── approved.png  
+│   ├── broadcast.png  
 ├── src/  
 │   ├── __init__.py  
 │   ├── bech32.py  
