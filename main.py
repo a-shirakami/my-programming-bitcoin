@@ -41,7 +41,7 @@ z = tx_obj.sig_hash_bip143(0, redeem_script=None, witness_script=None)
 sig = private_key.sign(z).der() + SIGHASH_ALL.to_bytes(1, 'big')
 tx_obj.tx_ins[0].witness = [sig, compressed_pubkey]
 
-print(tx_obj.verify_input(0))
-print(f'tx fee : {tx_obj.fee(testnet=True)}')
+print(f'verify input : {tx_obj.verify_input(0)}')
+print(f'tx fee : {tx_obj.fee(testnet=True)} sats')
 
 print(tx_obj.serialize().hex())
