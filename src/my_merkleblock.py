@@ -1,6 +1,6 @@
 import math
 
-from my_helper import (little_endian_to_int,
+from src.my_helper import (little_endian_to_int,
                        merkle_parent,
                        read_varint,
                        bytes_to_bit_field)

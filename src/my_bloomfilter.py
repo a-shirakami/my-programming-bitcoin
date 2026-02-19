@@ -1,11 +1,11 @@
-from my_helper import (
+from src.my_helper import (
     bit_field_to_bytes,
     encode_varint,
     int_to_little_endian,
     murmur3,
 )
 
-from my_network import GenericMessage
+from src.my_network import GenericMessage
 
 BIP37_CONSTANT = 0xfba4c795
 
