@@ -34,7 +34,7 @@ prev_index = 0
 tx_ins = []
 tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, sequence=0xffffffff, witness=None))
 ```
-* mempool（[https://mempool.space/ja/testnet4](https://mempool.space/ja/testnet4)）から元の送金元のトランザクションの16進値を取得  
+* mempool（[https://mempool.space/ja/testnet4](https://mempool.space/ja/testnet4)）から元の送金元のトランザクションの16進値を取得します。  
 今回は、自分の別のアドレスから送金しました（[作成したトランザクション](../send_to_pubadd.py)）。  
 * パースして、トランザクションIDとインデックスを取得します。  
 * TxInオブジェクトとしてリストに格納します（今回はインプット１つ）。  
@@ -54,6 +54,10 @@ tx_outs = []
 tx_outs.append(TxOut(amount=target_amount, script_pubkey=target_script_pubkey))
 tx_outs.append(TxOut(amount=change_amount, script_pubkey=change_script_pubkey))
 ```
+* 送金先用（相手宛て）とお釣り用（自分宛て）の2つのアウトプットを作成します。  
+target_address : 送金相手（今回は半分だけ送り返します。）  
+change_amount : 自分（499000 satoshi のお釣り→手数料は1000 satoshi になります。）  
+* TxOutオブジェクトとして、リストに格納します。（アウトプット2つ）  
 
 ### 4. 署名してシリアライズする  
 ```python
