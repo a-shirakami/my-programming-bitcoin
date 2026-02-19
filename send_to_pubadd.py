@@ -1,8 +1,8 @@
 from src.bech32 import segwit_encode, segwit_decode
-from src.my_ecc import PrivateKey, Signature
-from src.my_script import Script, p2wpkh_script
+from src.my_ecc import PrivateKey
+from src.my_script import p2wpkh_script
 from src.my_tx import Tx, TxIn, TxOut
-from src.my_helper import hash160, decode_base58, SIGHASH_ALL
+from src.my_helper import hash160, SIGHASH_ALL
 from secret import TX_20260217
 from io import BytesIO
 
