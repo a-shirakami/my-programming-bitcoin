@@ -1,7 +1,7 @@
 from io import BytesIO
-from src.my_helper import hash160, SIGHASH_ALL, int_to_little_endian
+from src.my_helper import hash160, SIGHASH_ALL
 from src.my_ecc import PrivateKey
-from src.my_script import Script, p2wpkh_script
+from src.my_script import p2wpkh_script
 from src.my_tx import Tx, TxIn, TxOut
 from src.bech32 import segwit_encode, segwit_decode
 from secret import SECRET
@@ -20,8 +20,7 @@ prev_tx = Tx.parse(stream)
 prev_tx_id = bytes.fromhex(prev_tx.id())
 prev_index = 0
 tx_ins = []
-tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, 
-                   sequence=0xffffffff, witness=None))
+tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, sequence=0xffffffff, witness=None))
 
 target_address = "tb1q24v08fgsknnyt2qj53qkzmphnxp2aafdq6xd7w"
 target_amount = 500000
