@@ -35,7 +35,7 @@ tx_ins = []
 tx_ins.append(TxIn(prev_tx=prev_tx_id, prev_index=prev_index, script_sig=None, sequence=0xffffffff, witness=None))
 ```
 * mempool（[https://mempool.space/ja/testnet4](https://mempool.space/ja/testnet4)）から元の送金元のトランザクションの16進値を取得します。  
-今回は、自分の別のアドレスから送金しました（[作成したトランザクション](../send_to_pubadd.py)）。  
+今回は、自分の別のアドレスから送金しました（作成したトランザクション：[send_to_pubadd.py](../send_to_pubadd.py)）。  
 * パースして、トランザクションIDとインデックスを取得します。  
 * TxInオブジェクトとしてリストに格納します（今回はインプット１つ）。  
 
